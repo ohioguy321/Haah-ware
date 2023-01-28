@@ -400,6 +400,26 @@ end
 game:GetService("UserInputService").InputBegan:connect(TrashTalk)
 end)
 
+    Main1Section:NewButton("No Jump Cooldown", "yesyesyes", function()
+    -- init, for autoexec support
+if not game.IsLoaded(game) then
+   game.Loaded.Wait(game.Loaded);
+end
+
+-- variables
+local IsA = game.IsA;
+local newindex = nil
+
+-- main hook
+newindex = hookmetamethod(game, "__newindex", function(self, Index, Value)
+   if not checkcaller() and IsA(self, "Humanoid") and Index == "JumpPower" then
+       return
+   end
+   
+   return newindex(self, Index, Value);
+end)
+end)
+
   -- Anti-Lock
     local Main2 = Window:NewTab("Anti-Lock")
     local Main2Section = Main2:NewSection("Anti-Lock")

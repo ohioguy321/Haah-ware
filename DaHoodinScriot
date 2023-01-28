@@ -1,3 +1,17 @@
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Haahh-Ware Is Executed";
+    Text = "Made by ohioguy"; -- what the text says (ofc)
+    Duration = 60;
+})
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Have Fun Exploiting";
+    Text = "Enjoy"; -- what the text says (ofc)
+    Duration = 60;
+})
+
+
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Haah-Ware", "Ocean")
 
